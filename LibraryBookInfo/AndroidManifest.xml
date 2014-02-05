@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.viadatabase"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="9"
+        android:targetSdkVersion="17" />
+    <uses-permission android:name="android.permission.INTERNET"/>
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name="com.example.viadatabase.Login"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.example.viadatabase.DBHelper"
+            android:label="@string/title_activity_dbhelper" >
+        </activity>
+        <activity 
+            android:name="com.example.viadatabase.LibraryData"
+            android:label="@string/title_activity_library_data">
+            </activity>
+        <activity
+            android:name="com.example.viadatabase.LogIn"
+            android:label="@string/title_activity_log_in" >
+        </activity>
+        <activity
+            android:name="com.example.viadatabase.Inside"
+            android:label="@string/title_activity_inside" >
+        </activity>
+        <activity
+            android:name="com.example.viadatabase.NewUsr"
+            android:label="@string/title_activity_new_usr" >
+        </activity>
+        <activity
+            android:name="com.example.viadatabase.AdminLog"
+            android:label="@string/title_activity_admin_log" >
+        </activity>
+        <activity
+            android:name="com.example.viadatabase.UserLog"
+            android:label="@string/title_activity_user_log" >
+        </activity>
+        <activity
+            android:name="com.example.viadatabase.WelcomePage"
+            android:label="@string/title_activity_welcome_page" >
+        </activity>
+    </application>
+
+</manifest>
