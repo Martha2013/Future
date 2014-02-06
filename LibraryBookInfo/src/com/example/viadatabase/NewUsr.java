@@ -22,15 +22,13 @@ import android.widget.Toast;
  */
 public class NewUsr extends Activity implements OnClickListener {
 
-	private Button mRegister;
-	private Button mCancel;
-	private EditText mName;
-	private EditText mLibraryId;
-	private EditText mWork;
-	private DBHelper myDb = new DBHelper(NewUsr.this);
-	/* (non-Javadoc)
-	 * @see android.app.Activity#onCreate(android.os.Bundle)
-	 */
+	private Button Register;
+	private Button Cancel;
+	private EditText Name;
+	private EditText LibraryId;
+	private EditText Work;
+	private DBHelper Library = new DBHelper(NewUsr.this);
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
@@ -38,11 +36,11 @@ public class NewUsr extends Activity implements OnClickListener {
 		setContentView(R.layout.activity_new_usr);
 		
 		
-		mRegister = (Button)findViewById(R.id.buttonRegister);
-		mRegister.setOnClickListener(this);
+		Register = (Button)findViewById(R.id.buttonRegister);
+		Register.setOnClickListener(this);
 		
-		mCancel = (Button)findViewById(R.id.buttonCancel);
-		mCancel.setOnClickListener(this);
+		Cancel = (Button)findViewById(R.id.buttonCancel);
+		Cancel.setOnClickListener(this);
 	}
 	
 	public void onClick(View v) {
@@ -57,13 +55,13 @@ public class NewUsr extends Activity implements OnClickListener {
 				
 			case R.id.buttonRegister:
 				
-				mName = (EditText)findViewById(R.id.editName);
-				mLibraryId = (EditText)findViewById(R.id.editLibraryId);
-				mWork = (EditText)findViewById(R.id.editWork);
+				Name = (EditText)findViewById(R.id.editName);
+				LibraryId = (EditText)findViewById(R.id.editLibraryId);
+				Work = (EditText)findViewById(R.id.editWork);
 				
-				String uname = mName.getText().toString();
-				String LId = mLibraryId.getText().toString();
-				String work = mWork.getText().toString();
+				String uname = Name.getText().toString();
+				String LId = LibraryId.getText().toString();
+				String work = Work.getText().toString();
 				boolean invalid = false;
 				
 				if(uname.equals("")){
@@ -90,12 +88,12 @@ public class NewUsr extends Activity implements OnClickListener {
 	
 	public void onDestroy(){
 		super.onDestroy();
-		myDb.close();
+		Library.close();
 	}
 	
 	public void addEntry(String uname, String LId, String work){
 		
-		SQLiteDatabase db = myDb.getWritableDatabase();
+		SQLiteDatabase db = Library.getWritableDatabase();
 		
 		ContentValues values = new ContentValues();
 		values.put("Name", uname);

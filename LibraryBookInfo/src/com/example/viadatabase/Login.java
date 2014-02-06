@@ -16,26 +16,26 @@ import android.widget.Toast;
 
 public class Login extends Activity implements OnClickListener {
     
-	Button mLogin;
-	Button mNewUser;
-	Button mShowAll;
-	EditText mName;
+	Button Login;
+	Button NewUser;
+	Button ShowAll;
+	EditText Name;
 	EditText mLibId;
-	DBHelper mydb = null;
+	DBHelper Library = null;
 	/** Called when the activity is first created. */
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
         
-        mNewUser = (Button)findViewById(R.id.buttonNewUser);
-        mNewUser.setOnClickListener(this);
+        NewUser = (Button)findViewById(R.id.buttonNewUser);
+        NewUser.setOnClickListener(this);
         
-        mLogin = (Button)findViewById(R.id.buttonLogin);
-        mLogin.setOnClickListener(this);
+        Login = (Button)findViewById(R.id.buttonLogin);
+        Login.setOnClickListener(this);
         
-        mShowAll = (Button)findViewById(R.id.buttonShowAll);
-        mShowAll.setOnClickListener(this);
+        ShowAll = (Button)findViewById(R.id.buttonShowAll);
+        ShowAll.setOnClickListener(this);
     }
     
 	public void onClick(View v) {
@@ -43,10 +43,10 @@ public class Login extends Activity implements OnClickListener {
 		switch(v.getId()){
 		
 		case R.id.buttonLogin:
-			mName = (EditText)findViewById(R.id.editName);
+			Name = (EditText)findViewById(R.id.editName);
 			mLibId = (EditText)findViewById(R.id.editId);
 			
-			String uname = mName.getText().toString();
+			String uname = Name.getText().toString();
 			String LibId = mLibId.getText().toString();
 			
 			if(uname.equals("") || uname == null){
@@ -80,8 +80,8 @@ public class Login extends Activity implements OnClickListener {
 
 	public boolean validateLogin(String uname, String LibId, Context context) {
 		
-		mydb = new DBHelper(context);
-		SQLiteDatabase db = mydb.getReadableDatabase();
+		Library = new DBHelper(context);
+		SQLiteDatabase db = Library.getReadableDatabase();
 		//SELECT
 		String[] columns = {"Name"};
 		
@@ -93,7 +93,7 @@ public class Login extends Activity implements OnClickListener {
 		
 		Cursor cursor = null;
 		try{
-		//SELECT _id FROM login WHERE username=uname AND password=pass
+		//SELECT Name FROM members WHERE username=uname AND LibraryId=LibId
 		cursor = db.query(DBHelper.LIBRARY_TABLE_NAME, columns, selection, selectionArgs, null, null, null);
 		
 		//startManagingCursor(cursor);
@@ -112,10 +112,5 @@ public class Login extends Activity implements OnClickListener {
 		return true;
 	}
 	
-	/*public void onDestroy(){
-		super.onDestroy();
-		mydb.close();
-		
-	}
-	*/
+	
 }

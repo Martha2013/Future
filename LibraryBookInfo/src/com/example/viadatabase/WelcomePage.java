@@ -20,9 +20,7 @@ public class WelcomePage extends Activity {
 	// time to display the splash screen in ms
 	protected int _splashTime = 5000; 
 
-	/* (non-Javadoc)
-	 * @see android.app.Activity#onCreate(android.os.Bundle)
-	 */
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		// TODO Auto-generated method stub

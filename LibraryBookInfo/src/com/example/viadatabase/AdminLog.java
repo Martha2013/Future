@@ -23,25 +23,23 @@ import android.widget.Toast;
  */
 public class AdminLog extends Activity implements OnClickListener {
 
-	Button mAdminButton;
-	Button mAdminCancel;
-	EditText mUsername;
+	Button AdminButton;
+	Button AdminCancel;
+	EditText Username;
 	EditText mLibId;
-	DBHelper myDb = new DBHelper(AdminLog.this);
-	/* (non-Javadoc)
-	 * @see android.app.Activity#onCreate(android.os.Bundle)
-	 */
+	DBHelper Library = new DBHelper(AdminLog.this);
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_admin_log);
 		
-		mAdminButton = (Button)findViewById(R.id.buttonLogin);
-		mAdminButton.setOnClickListener(this);
+		AdminButton = (Button)findViewById(R.id.buttonLogin);
+		AdminButton.setOnClickListener(this);
 		
-		mAdminCancel = (Button)findViewById(R.id.buttonCancel);
-		mAdminCancel.setOnClickListener(this);
+		AdminCancel = (Button)findViewById(R.id.buttonCancel);
+		AdminCancel.setOnClickListener(this);
 	}
 	
 	public void onClick(View v) {
@@ -79,14 +77,14 @@ public class AdminLog extends Activity implements OnClickListener {
 	public void retrieveEntries(){
 		try{
 			
-			SQLiteDatabase db = myDb.getReadableDatabase();
+			SQLiteDatabase db = Library.getReadableDatabase();
 			
 			String[] columns = {"Name","Work","LibraryId"};
 			
 			Cursor cursor = db.query(DBHelper.LIBRARY_TABLE_NAME, columns, null, null, null, null, null);
 			if(cursor != null){
 				System.out.println("database showing");
-				//startManagingCursor(cursor);
+				
 				showDatabase(cursor);
 			}
 			System.out.println("Cursor NuLL");
@@ -113,16 +111,7 @@ public class AdminLog extends Activity implements OnClickListener {
 		setContentView(result);
 	}
 	
-	/*public void onDestroy(){
-		super.onDestroy();
-		myDb.close();
-		finish();
-	}
-	*/
-
-	/* (non-Javadoc)
-	 * @see android.app.Activity#onBackPressed()
-	 */
+	
 	@Override
 	public void onBackPressed() {
 		super.onBackPressed();

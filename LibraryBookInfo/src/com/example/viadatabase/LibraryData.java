@@ -1,7 +1,5 @@
 package com.example.viadatabase;
 
-
-
 import java.io.BufferedReader;
 import java.io.InputStream;
 import java.io.InputStreamReader;
@@ -87,8 +85,8 @@ public class LibraryData extends ListActivity {
 	              result = sb.toString();
 	              
 	              inputStream.close();
-	              //Toast.makeText(getApplicationContext(), result, Toast.LENGTH_LONG).show();
-	              //splittedresult = result.split("#");
+	              Toast.makeText(getApplicationContext(), result, Toast.LENGTH_LONG).show();
+	             splittedresult = result.split("#");
 
 	              ArrayAdapter<String> aa= new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, splittedresult);// provide a particular design for the drop-down lines
 	              setListAdapter(aa);

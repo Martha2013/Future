@@ -32,9 +32,7 @@ public class DBHelper extends SQLiteOpenHelper {
 		
 	}
 
-	/* (non-Javadoc)
-	 * @see android.database.sqlite.SQLiteOpenHelper#onCreate(android.database.sqlite.SQLiteDatabase)
-	 */
+	
 	@Override
 	public void onCreate(SQLiteDatabase db) {
 		
@@ -50,9 +48,7 @@ public class DBHelper extends SQLiteOpenHelper {
 		}
 	}
 
-	/* (non-Javadoc)
-	 * @see android.database.sqlite.SQLiteOpenHelper#onUpgrade(android.database.sqlite.SQLiteDatabase, int, int)
-	 */
+	
 	@Override
 	public void onUpgrade(SQLiteDatabase arg0, int oldVersion, int newVersion) {
 		
