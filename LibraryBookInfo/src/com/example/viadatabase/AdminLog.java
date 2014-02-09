@@ -52,7 +52,7 @@ public class AdminLog extends Activity implements OnClickListener {
 			String LId = mLibId.getText().toString();
 			if(LId.equals("") || LId == null){
 				
-				Toast.makeText(getApplicationContext(), "Password Missing", Toast.LENGTH_SHORT).show();
+				Toast.makeText(getApplicationContext(), "LibraryId Missing", Toast.LENGTH_SHORT).show();
 				
 			}else{
 				

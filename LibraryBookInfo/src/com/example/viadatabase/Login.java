@@ -52,7 +52,7 @@ public class Login extends Activity implements OnClickListener {
 			if(uname.equals("") || uname == null){
 				Toast.makeText(getApplicationContext(), "Username Empty", Toast.LENGTH_SHORT).show();
 			}else if(LibId.equals("") || LibId == null){
-				Toast.makeText(getApplicationContext(), "Password Empty", Toast.LENGTH_SHORT).show();
+				Toast.makeText(getApplicationContext(), "LibraryId Empty", Toast.LENGTH_SHORT).show();
 			}else{
 				boolean validLogin = validateLogin(uname, LibId, Login.this);
 				if(validLogin){
