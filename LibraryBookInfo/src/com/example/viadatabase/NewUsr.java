@@ -69,10 +69,10 @@ public class NewUsr extends Activity implements OnClickListener {
 					Toast.makeText(getApplicationContext(), "Username Missing", Toast.LENGTH_SHORT).show();
 				}else if(LId.equals("")){
 					invalid = true;
-					Toast.makeText(getApplicationContext(), "Password Missing", Toast.LENGTH_SHORT).show();
+					Toast.makeText(getApplicationContext(), "LibraryId Missing", Toast.LENGTH_SHORT).show();
 				}else if(work.equals("")){
 					invalid = true;
-					Toast.makeText(getApplicationContext(), "Email ID Missing", Toast.LENGTH_SHORT).show();
+					Toast.makeText(getApplicationContext(), "Work Missing", Toast.LENGTH_SHORT).show();
 				}
 				
 				if(invalid == false){

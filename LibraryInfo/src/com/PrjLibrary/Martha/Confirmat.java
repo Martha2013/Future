@@ -87,7 +87,8 @@ public class Confirmat extends JFrame {
 				        	 stmt.execute("DELETE FROM booksinstore WHERE (BookName='"+BookNam+"')");
 				        	 stmt.executeUpdate("INSERT INTO bookstaken(BookNames,UserName,Date) values('"+BookNam+"','"+Nam+"','"+Dat+"')");
 				        	 
-				        	 JOptionPane.showMessageDialog(null,"You took" + "  " +  BookNam + " " + "book on" +" "+ Dat + " "+ "return it after three days");	 
+				        	 JOptionPane.showMessageDialog(null,"You took" + "  " +  BookNam + " " + "book on" +" "+ Dat + " "+ "return it after three days");
+				        	 System.exit(0);
 				        	 
 				     }
 				         else if(Book!=(BookNam)) {
@@ -106,7 +107,7 @@ public class Confirmat extends JFrame {
 			
 		});
 		
-		btnYes.setBounds(63, 212, 53, 23);
+		btnYes.setBounds(50, 212, 66, 23);
 		contentPane.add(btnYes);
 		
 		JButton btnNo = new JButton("No");

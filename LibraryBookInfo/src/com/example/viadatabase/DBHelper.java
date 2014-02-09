@@ -22,7 +22,7 @@ public class DBHelper extends SQLiteOpenHelper {
 	                "CREATE TABLE " + LIBRARY_TABLE_NAME + "(" +
 	                "_id INTEGER PRIMARY KEY AUTOINCREMENT,"+
 	                "Name TEXT NOT NULL, LibraryID TEXT NOT NULL, Work TEXT NOT NULL);";
-	private static final String LIBRARY_DB_ADMIN = "INSERT INTO "+LIBRARY_TABLE_NAME+"values(1, admin, password, admin@gmail.com);";
+	private static final String LIBRARY_DB_ADMIN = "INSERT INTO "+LIBRARY_TABLE_NAME+"values(1, admin, LibAdmin, Creator);";
 	
 	
 	public DBHelper(Context context) {

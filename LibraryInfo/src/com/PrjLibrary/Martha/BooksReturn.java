@@ -99,7 +99,7 @@ public class BooksReturn extends JFrame {
 				         if (Book.equals(BookNam)){
 				        	 st.execute("DELETE FROM bookstaken WHERE (BookNames='"+BookNam+"')");
 				        	 st.executeUpdate("INSERT INTO booksinstore(BookName,Author,BookId,Location) values('"+BookNam+"','"+Author+"','"+BId+"','"+Locate+"')");
-				        	 
+				        	 st.executeUpdate("INSERT INTO booksreturned(BookName,Date) values('"+BookNam+"','"+Dat+"')");
 				        	 
 				        	 JOptionPane.showMessageDialog(null,"You returned" + "  " +  BookNam + " " + "book on" +" "+ Dat + " ");	 
 				        	 

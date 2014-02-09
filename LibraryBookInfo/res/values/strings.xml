@@ -22,7 +22,7 @@
     <string name="newuser">New User</string>
     <string name="work">Work</string>
     <string name="buttonRegister">Register</string>
-    <string name="loggedin">Click to see the book in the library</string>
+    <string name="loggedin">Click to see the books in the library</string>
     <string name="btnView">VIEW</string>
     <string name="title_activity_library_data">LibraryData</string>
 

@@ -104,7 +104,7 @@ public class Login extends Activity implements OnClickListener {
 		
 		if(numberOfRows <= 0){
 		
-			Toast.makeText(getApplicationContext(), "Login Failed..\nTry Again", Toast.LENGTH_SHORT).show();
+			Toast.makeText(getApplicationContext(), "Login Failed.. + \n + Try Again", Toast.LENGTH_SHORT).show();
 			return false;
 		}
 		

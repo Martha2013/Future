@@ -64,7 +64,7 @@ public class Welcome extends JFrame {
 			
 			}
 		});
-		btnNewButton.setBounds(66, 166, 89, 23);
+		btnNewButton.setBounds(10, 166, 89, 23);
 		contentPane.add(btnNewButton);
 		
 		JButton btnNewButton_1 = new JButton("New Book");
@@ -86,7 +86,7 @@ public class Welcome extends JFrame {
 				next.setVisible(true);
 			}
 		});
-		btnNewButton_2.setBounds(242, 166, 89, 23);
+		btnNewButton_2.setBounds(274, 166, 89, 23);
 		contentPane.add(btnNewButton_2);
 		
 		JLabel lblNewLabel_1 = new JLabel("New label");
@@ -98,5 +98,16 @@ public class Welcome extends JFrame {
 		lblNewLabel_2.setForeground(new Color(148, 0, 211));
 		lblNewLabel_2.setBounds(76, 38, 337, 39);
 		contentPane.add(lblNewLabel_2);
+		
+		JButton btnNewUser = new JButton("New User");
+		btnNewUser.setFont(new Font("Times New Roman", Font.PLAIN, 14));
+		btnNewUser.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				SignUp newUser=new SignUp();
+				newUser.setVisible(true);
+			}
+		});
+		btnNewUser.setBounds(10, 228, 101, 23);
+		contentPane.add(btnNewUser);
 	}
 }
